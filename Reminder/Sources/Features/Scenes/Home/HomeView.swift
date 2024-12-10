@@ -65,6 +65,18 @@ class HomeView: UIView {
         return button
     }()
     
+    let myPrescriptionsButton = CustomButtonView(
+        icon: UIImage(named: "Paper"),
+        title: "Minhas receitas",
+        description: "Acompanhe os medicamentos e gerencie lembretes"
+    )
+
+    let newPrescriptionButton = CustomButtonView(
+        icon: UIImage(named: "pills"),
+        title: "Nova receita",
+        description: "Cadastre novos lembretes de receitas"
+    )
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -83,6 +95,8 @@ class HomeView: UIView {
         
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
+        contentBackground.addSubview(myPrescriptionsButton)
+        contentBackground.addSubview(newPrescriptionButton)
         
         setupConstraints()
         setupImageGesture()
@@ -115,6 +129,16 @@ class HomeView: UIView {
             feedbackButton.bottomAnchor.constraint(equalTo: contentBackground.bottomAnchor, constant: -Metrics.medium),
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
+            
+            myPrescriptionsButton.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: 40),
+            myPrescriptionsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            myPrescriptionsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
+            myPrescriptionsButton.heightAnchor.constraint(equalToConstant: 112),
+            
+            newPrescriptionButton.topAnchor.constraint(equalTo: myPrescriptionsButton.bottomAnchor, constant: Metrics.medium),
+            newPrescriptionButton.leadingAnchor.constraint(equalTo: myPrescriptionsButton.leadingAnchor),
+            newPrescriptionButton.trailingAnchor.constraint(equalTo: myPrescriptionsButton.trailingAnchor),
+            newPrescriptionButton.heightAnchor.constraint(equalTo: myPrescriptionsButton.heightAnchor),
         ])
 
     }
