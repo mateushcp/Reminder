@@ -55,6 +55,22 @@ class HomeView: UIView {
         return textField
     }()
     
+    let myPrescriptionsButtons: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "Paper"),
+                                    title: "Minhas receitas",
+                                    description: "Acompanhe os medicamentos e gerencie lembretes")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let newPrescriptionButton: ButtonHomeView = {
+        let button = ButtonHomeView(icon: UIImage(named: "pills"),
+                                    title: "Nova receita",
+                                    description: "Cadastre novos lembretes de receitas")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     let feedbackButton: UIButton = {
         let button = UIButton()
         button.setTitle("home.feedback.button.title".localized, for: .normal)
@@ -64,18 +80,6 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    let myPrescriptionsButton = CustomButtonView(
-        icon: UIImage(named: "Paper"),
-        title: "Minhas receitas",
-        description: "Acompanhe os medicamentos e gerencie lembretes"
-    )
-
-    let newPrescriptionButton = CustomButtonView(
-        icon: UIImage(named: "pills"),
-        title: "Nova receita",
-        description: "Cadastre novos lembretes de receitas"
-    )
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -95,7 +99,7 @@ class HomeView: UIView {
         
         addSubview(contentBackground)
         contentBackground.addSubview(feedbackButton)
-        contentBackground.addSubview(myPrescriptionsButton)
+        contentBackground.addSubview(myPrescriptionsButtons)
         contentBackground.addSubview(newPrescriptionButton)
         
         setupConstraints()
@@ -130,15 +134,16 @@ class HomeView: UIView {
             feedbackButton.leadingAnchor.constraint(equalTo: contentBackground.leadingAnchor, constant: Metrics.medium),
             feedbackButton.trailingAnchor.constraint(equalTo: contentBackground.trailingAnchor, constant: -Metrics.medium),
             
-            myPrescriptionsButton.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: 40),
-            myPrescriptionsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
-            myPrescriptionsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
-            myPrescriptionsButton.heightAnchor.constraint(equalToConstant: 112),
+            myPrescriptionsButtons.topAnchor.constraint(equalTo: contentBackground.topAnchor, constant: Metrics.huge),
+            myPrescriptionsButtons.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
+            myPrescriptionsButtons.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medium),
+            myPrescriptionsButtons.heightAnchor.constraint(equalToConstant: 112),
             
-            newPrescriptionButton.topAnchor.constraint(equalTo: myPrescriptionsButton.bottomAnchor, constant: Metrics.medium),
-            newPrescriptionButton.leadingAnchor.constraint(equalTo: myPrescriptionsButton.leadingAnchor),
-            newPrescriptionButton.trailingAnchor.constraint(equalTo: myPrescriptionsButton.trailingAnchor),
-            newPrescriptionButton.heightAnchor.constraint(equalTo: myPrescriptionsButton.heightAnchor),
+            newPrescriptionButton.topAnchor.constraint(equalTo: myPrescriptionsButtons.bottomAnchor, constant: Metrics.medium),
+            newPrescriptionButton.leadingAnchor.constraint(equalTo: myPrescriptionsButtons.leadingAnchor),
+            newPrescriptionButton.trailingAnchor.constraint(equalTo: myPrescriptionsButtons.trailingAnchor),
+            newPrescriptionButton.heightAnchor.constraint(equalTo: myPrescriptionsButtons.heightAnchor)
+            
         ])
 
     }

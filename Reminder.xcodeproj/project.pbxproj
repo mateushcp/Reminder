@@ -30,7 +30,7 @@
 		A9408F992C434706006FEE4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9408F982C434706006FEE4F /* Localizable.strings */; };
 		A9408F9C2C434813006FEE4F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9408F9B2C434813006FEE4F /* String+Ext.swift */; };
 		A9408F9E2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9408F9D2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift */; };
-		A9595A9D2D07C9E5009C8144 /* customButtomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595A9C2D07C9E5009C8144 /* customButtomView.swift */; };
+		A9595AA12D07CDEB009C8144 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */; };
 		A96D95272C6A6504004F0793 /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D95262C6A6504004F0793 /* ReminderFlowController.swift */; };
 		A96D95292C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D95282C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift */; };
 		A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */; };
@@ -68,7 +68,7 @@
 		A9408F982C434706006FEE4F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A9408F9B2C434813006FEE4F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		A9408F9D2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginbottomSheetViewDelegate.swift; sourceTree = "<group>"; };
-		A9595A9C2D07C9E5009C8144 /* customButtomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtomView.swift; sourceTree = "<group>"; };
+		A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
 		A96D95262C6A6504004F0793 /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
 		A96D95282C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
 		A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFlowDelegate.swift; sourceTree = "<group>"; };
@@ -203,13 +203,13 @@
 		A9408F7A2C4325AC006FEE4F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A9595A9E2D07CDAD009C8144 /* Components */,
 				A92F4B6D2CACBF9E004727AD /* Scenes */,
 				A93B6BB72C6A8DE90038FDF5 /* UserDefaults */,
 				A93B6BB42C6A8D720038FDF5 /* Model */,
 				A96D952C2C6A801D004F0793 /* DependencyInjection */,
 				A9408F9A2C4347FF006FEE4F /* Extensions */,
 				A9408F812C432C32006FEE4F /* Constants */,
-				A9595A9C2D07C9E5009C8144 /* customButtomView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -286,6 +286,22 @@
 				A9408F9B2C434813006FEE4F /* String+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9595A9E2D07CDAD009C8144 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A9595A9F2D07CDB2009C8144 /* ButtonHomeView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A9595A9F2D07CDB2009C8144 /* ButtonHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */,
+			);
+			path = ButtonHomeView;
 			sourceTree = "<group>";
 		};
 		A96D952C2C6A801D004F0793 /* DependencyInjection */ = {
@@ -447,12 +463,12 @@
 				A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */,
 				A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */,
 				A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */,
-				A9595A9D2D07C9E5009C8144 /* customButtomView.swift in Sources */,
 				A93B6BB62C6A8D7D0038FDF5 /* User.swift in Sources */,
 				A92F4B7D2CACC362004727AD /* ViewController+Ext.swift in Sources */,
 				A91451A42C60326A008F3BD6 /* LoginBottomSheetViewModel.swift in Sources */,
 				A9408F9C2C434813006FEE4F /* String+Ext.swift in Sources */,
 				A9408F682C43254B006FEE4F /* SceneDelegate.swift in Sources */,
+				A9595AA12D07CDEB009C8144 /* ButtonHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

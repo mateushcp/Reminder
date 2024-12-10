@@ -1,6 +1,14 @@
+//
+//  ButtonHomeView.swift
+//  Reminder
+//
+//  Created by Mateus Henrique Coelho de Paulo on 09/12/24.
+//
+
+import Foundation
 import UIKit
 
-class CustomButtonView: UIView {
+class ButtonHomeView: UIView {
     private let iconView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray600
@@ -47,19 +55,18 @@ class CustomButtonView: UIView {
         backgroundColor = Colors.gray700
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
-        
         iconImageView.image = icon
         titleLabel.text = title
         descriptionLabel.text = description
         
-        setupView()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
+    private func setupUI() {
         addSubview(iconView)
         iconView.addSubview(iconImageView)
         addSubview(titleLabel)
@@ -67,8 +74,8 @@ class CustomButtonView: UIView {
         addSubview(arrowImageView)
         
         NSLayoutConstraint.activate([
-            
-            iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+        
+            iconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.medium),
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
             iconView.widthAnchor.constraint(equalToConstant: 80),
             iconView.heightAnchor.constraint(equalToConstant: 80),
@@ -78,18 +85,17 @@ class CustomButtonView: UIView {
             iconImageView.widthAnchor.constraint(equalToConstant: 48),
             iconImageView.heightAnchor.constraint(equalToConstant: 48),
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: arrowImageView.leadingAnchor, constant: -8),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: Metrics.medium),
+            titleLabel.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: Metrics.medier),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Metrics.medier),
             
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.medium),
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Metrics.medier),
+            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: Metrics.medier),
             
             arrowImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            arrowImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.medier),
             arrowImageView.widthAnchor.constraint(equalToConstant: 16),
             arrowImageView.heightAnchor.constraint(equalToConstant: 16)
         ])
