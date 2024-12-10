@@ -14,12 +14,12 @@ class NewReceiptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-//        setupActions()
     }
     
     private func setupView() {
         view.backgroundColor = Colors.gray800
         view.addSubview(newReceiptView)
+        self.navigationController?.navigationBar.isHidden = true
         
         setupConstraints()
     }
