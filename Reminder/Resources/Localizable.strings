@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Reminder
+
+  Created by Mateus Henrique Coelho de Paulo on 13/07/24.
+  
+*/
+
+/* MARK: - LOGIN Screen */
+
+"login.label.title" = "Entre para acessar suas receitas";
+"login.email.placeholder" = "email@exemplo.com";
+"login.password.placeholder" = "senha";
+"login.button.tittle" = "Entrar";
+
+"login.login.label.title" = "E-mail";
+"login.passwordText.label.title" = "Senha";
+
+/* MARK: - HOME Screen */
+
+"home.welcome.label" = "Boas Vindas";
+"home.feedback.button.title" = "Avaliar";
+
+
+/* MARK: - Receipts Screen */
+
+/* MARK: - NewReceipt Screen */
