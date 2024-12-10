@@ -31,6 +31,10 @@
 		A9408F9C2C434813006FEE4F /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9408F9B2C434813006FEE4F /* String+Ext.swift */; };
 		A9408F9E2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9408F9D2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift */; };
 		A9595AA12D07CDEB009C8144 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */; };
+		A9595AA82D07E1BD009C8144 /* NewReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AA72D07E1BD009C8144 /* NewReceiptViewController.swift */; };
+		A9595AAA2D07E2C4009C8144 /* NewReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AA92D07E2C4009C8144 /* NewReceiptView.swift */; };
+		A9595AAD2D07EE29009C8144 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AAC2D07EE29009C8144 /* Input.swift */; };
+		A9595AB02D07F2EE009C8144 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9595AAF2D07F2EE009C8144 /* Checkbox.swift */; };
 		A96D95272C6A6504004F0793 /* ReminderFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D95262C6A6504004F0793 /* ReminderFlowController.swift */; };
 		A96D95292C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D95282C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift */; };
 		A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */; };
@@ -69,6 +73,10 @@
 		A9408F9B2C434813006FEE4F /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		A9408F9D2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginbottomSheetViewDelegate.swift; sourceTree = "<group>"; };
 		A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
+		A9595AA72D07E1BD009C8144 /* NewReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptViewController.swift; sourceTree = "<group>"; };
+		A9595AA92D07E2C4009C8144 /* NewReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReceiptView.swift; sourceTree = "<group>"; };
+		A9595AAC2D07EE29009C8144 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		A9595AAF2D07F2EE009C8144 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		A96D95262C6A6504004F0793 /* ReminderFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderFlowController.swift; sourceTree = "<group>"; };
 		A96D95282C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetFlowDelegate.swift; sourceTree = "<group>"; };
 		A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFlowDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 		A92F4B6D2CACBF9E004727AD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A9595AA62D07E1AA009C8144 /* NewReceipt */,
 				A92F4B6E2CACBFB7004727AD /* Home */,
 				A9408F912C433930006FEE4F /* LoginBottomSheet */,
 				A9408F7B2C4325B1006FEE4F /* Splash */,
@@ -291,6 +300,8 @@
 		A9595A9E2D07CDAD009C8144 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A9595AAE2D07F2E1009C8144 /* Checkbox */,
+				A9595AAB2D07EE1B009C8144 /* Input */,
 				A9595A9F2D07CDB2009C8144 /* ButtonHomeView */,
 			);
 			path = Components;
@@ -302,6 +313,31 @@
 				A9595AA02D07CDEB009C8144 /* ButtonHomeView.swift */,
 			);
 			path = ButtonHomeView;
+			sourceTree = "<group>";
+		};
+		A9595AA62D07E1AA009C8144 /* NewReceipt */ = {
+			isa = PBXGroup;
+			children = (
+				A9595AA72D07E1BD009C8144 /* NewReceiptViewController.swift */,
+				A9595AA92D07E2C4009C8144 /* NewReceiptView.swift */,
+			);
+			path = NewReceipt;
+			sourceTree = "<group>";
+		};
+		A9595AAB2D07EE1B009C8144 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				A9595AAC2D07EE29009C8144 /* Input.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		A9595AAE2D07F2E1009C8144 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				A9595AAF2D07F2EE009C8144 /* Checkbox.swift */,
+			);
+			path = Checkbox;
 			sourceTree = "<group>";
 		};
 		A96D952C2C6A801D004F0793 /* DependencyInjection */ = {
@@ -457,17 +493,21 @@
 				A96D95292C6A673B004F0793 /* LoginBottomSheetFlowDelegate.swift in Sources */,
 				A9408F872C432F1D006FEE4F /* Text-constants.swift in Sources */,
 				A9408F932C433946006FEE4F /* LoginBottomSheetViewController.swift in Sources */,
+				A9595AB02D07F2EE009C8144 /* Checkbox.swift in Sources */,
 				A96D95272C6A6504004F0793 /* ReminderFlowController.swift in Sources */,
 				A9408F9E2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift in Sources */,
 				A9408F8A2C43315B006FEE4F /* Metrics-Constants.swift in Sources */,
 				A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */,
 				A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */,
 				A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */,
+				A9595AAD2D07EE29009C8144 /* Input.swift in Sources */,
 				A93B6BB62C6A8D7D0038FDF5 /* User.swift in Sources */,
 				A92F4B7D2CACC362004727AD /* ViewController+Ext.swift in Sources */,
 				A91451A42C60326A008F3BD6 /* LoginBottomSheetViewModel.swift in Sources */,
 				A9408F9C2C434813006FEE4F /* String+Ext.swift in Sources */,
+				A9595AAA2D07E2C4009C8144 /* NewReceiptView.swift in Sources */,
 				A9408F682C43254B006FEE4F /* SceneDelegate.swift in Sources */,
+				A9595AA82D07E1BD009C8144 /* NewReceiptViewController.swift in Sources */,
 				A9595AA12D07CDEB009C8144 /* ButtonHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
