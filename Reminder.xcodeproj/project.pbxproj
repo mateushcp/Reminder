@@ -44,7 +44,7 @@
 		A99ADE422D31D28A005A3A82 /* NewReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */; };
 		A99ADE492D3424F3005A3A82 /* MyReceiptsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */; };
 		A99ADE4B2D342695005A3A82 /* MyReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */; };
-		A99ADE4D2D343192005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE4C2D343192005A3A82 /* MyReceiptsFlowDelegate.swift */; };
+		A99ADE4F2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */; };
 		DC2E8EDCCCCB44809AA164FE /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE7918EC1D61E6A2C06463A /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +91,7 @@
 		A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewReceiptViewModel.swift; path = Reminder/Sources/Features/Database/NewReceiptViewModel.swift; sourceTree = SOURCE_ROOT; };
 		A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsView.swift; sourceTree = "<group>"; };
 		A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
-		A99ADE4C2D343192005A3A82 /* MyReceiptsFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsFlowDelegate.swift; sourceTree = "<group>"; };
+		A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsFlowDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,7 +391,7 @@
 			children = (
 				A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */,
 				A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */,
-				A99ADE4C2D343192005A3A82 /* MyReceiptsFlowDelegate.swift */,
+				A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */,
 			);
 			path = MyReceipts;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 				A96D95272C6A6504004F0793 /* ReminderFlowController.swift in Sources */,
 				A9408F9E2C4EA3CD006FEE4F /* LoginbottomSheetViewDelegate.swift in Sources */,
 				A99ADE4B2D342695005A3A82 /* MyReceiptsViewController.swift in Sources */,
-				A99ADE4D2D343192005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */,
+				A99ADE4F2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */,
 				A9408F8A2C43315B006FEE4F /* Metrics-Constants.swift in Sources */,
 				A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */,
 				A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */,
