@@ -1,5 +1,5 @@
 //
-//  MyReceiptsViewController.swift
+//  MuReceiptsViewController.swift
 //  Reminder
 //
 //  Created by Mateus Henrique Coelho de Paulo on 12/01/25.
@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class MinhasReceitasViewController: UIViewController {
-    let contentView: MinhasReceitasView
+class MyReceiptsViewController: UIViewController {
+    let contentView: MyReceiptsView
     
-    init(contentView: MinhasReceitasView) {
+    init(contentView: MyReceiptsView) {
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +28,7 @@ class MinhasReceitasViewController: UIViewController {
     private func setup() {
         view.addSubview(contentView)
         view.backgroundColor = Colors.gray800
-        contentView.delegate = self
+        
         setupConstraints()
     }
     
@@ -41,14 +41,5 @@ class MinhasReceitasViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-}
-
-extension MinhasReceitasViewController: MinhasReceitasViewDelegate {
-    func didTapBackButton() {
-        navigationController?.popViewController(animated: true)
-    }
     
-    func didTapAddButton() {
-        // Implementar navegação ou ação para adicionar nova receita
-    }
 }

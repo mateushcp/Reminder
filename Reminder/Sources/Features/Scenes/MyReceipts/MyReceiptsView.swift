@@ -5,11 +5,11 @@
 //  Created by Mateus Henrique Coelho de Paulo on 12/01/25.
 //
 
+import Foundation
 import UIKit
 
-class MinhasReceitasView: UIView {
-    
-    weak public var delegate: MinhasReceitasViewDelegate?
+class MyReceiptsView: UIView {
+        weak public var delegate: MyReceiptsViewDelegate?
     
     let headerBackground: UIView = {
         let view = UIView()
@@ -20,9 +20,20 @@ class MinhasReceitasView: UIView {
     
     let backButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(named: "arrow-left") // Substitua pelo nome correto do ícone
+        let image = UIImage(named: "arrow-left")
         button.setImage(image, for: .normal)
         button.tintColor = Colors.primaryBlueBase
+        button.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let addButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "add-button")
+        button.setImage(image, for: .normal)
+        button.tintColor = Colors.primaryBlueBase
+        button.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -44,15 +55,6 @@ class MinhasReceitasView: UIView {
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    let addButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(named: "add-button") // Substitua pelo nome correto do ícone
-        button.setImage(image, for: .normal)
-        button.tintColor = Colors.primaryBlueBase
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
     }()
     
     let contentBackground: UIView = {
@@ -78,12 +80,11 @@ class MinhasReceitasView: UIView {
         addSubview(headerBackground)
         headerBackground.addSubview(backButton)
         headerBackground.addSubview(titleLabel)
-        headerBackground.addSubview(addButton)
         headerBackground.addSubview(subtitleLabel)
+        headerBackground.addSubview(addButton)
         addSubview(contentBackground)
         
         setupConstraints()
-        setupActions()
     }
     
     private func setupConstraints() {
@@ -117,11 +118,6 @@ class MinhasReceitasView: UIView {
         ])
     }
     
-    private func setupActions() {
-        backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
-        addButton.addTarget(self, action: #selector(didTapAddButton), for: .touchUpInside)
-    }
-    
     @objc
     private func didTapBackButton() {
         delegate?.didTapBackButton()
@@ -131,9 +127,10 @@ class MinhasReceitasView: UIView {
     private func didTapAddButton() {
         delegate?.didTapAddButton()
     }
+    
 }
 
-protocol MinhasReceitasViewDelegate: AnyObject {
+protocol MyReceiptsViewDelegate: AnyObject {
     func didTapBackButton()
     func didTapAddButton()
 }
