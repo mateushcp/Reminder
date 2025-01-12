@@ -40,6 +40,8 @@
 		A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */; };
 		A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D952E2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift */; };
 		A96D95312C6A808D004F0793 /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D95302C6A808D004F0793 /* ViewControllersFactory.swift */; };
+		A99ADE3F2D31C41E005A3A82 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE3E2D31C41E005A3A82 /* DBHelper.swift */; };
+		A99ADE422D31D28A005A3A82 /* NewReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */; };
 		DC2E8EDCCCCB44809AA164FE /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE7918EC1D61E6A2C06463A /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		A96D952A2C6A6C36004F0793 /* SplashFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFlowDelegate.swift; sourceTree = "<group>"; };
 		A96D952E2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactoryProtocol.swift; sourceTree = "<group>"; };
 		A96D95302C6A808D004F0793 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		A99ADE3E2D31C41E005A3A82 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewReceiptViewModel.swift; path = Reminder/Sources/Features/Database/NewReceiptViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		A9408F7A2C4325AC006FEE4F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A99ADE3D2D31C407005A3A82 /* Database */,
 				A9595A9E2D07CDAD009C8144 /* Components */,
 				A92F4B6D2CACBF9E004727AD /* Scenes */,
 				A93B6BB72C6A8DE90038FDF5 /* UserDefaults */,
@@ -318,6 +323,7 @@
 		A9595AA62D07E1AA009C8144 /* NewReceipt */ = {
 			isa = PBXGroup;
 			children = (
+				A99ADE402D31D279005A3A82 /* New Group */,
 				A9595AA72D07E1BD009C8144 /* NewReceiptViewController.swift */,
 				A9595AA92D07E2C4009C8144 /* NewReceiptView.swift */,
 			);
@@ -355,6 +361,22 @@
 				A96D95302C6A808D004F0793 /* ViewControllersFactory.swift */,
 			);
 			path = ViewControllersFactory;
+			sourceTree = "<group>";
+		};
+		A99ADE3D2D31C407005A3A82 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A99ADE3E2D31C41E005A3A82 /* DBHelper.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A99ADE402D31D279005A3A82 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A9F94AC82C99DC660009BC47 /* ViewModel */ = {
@@ -501,11 +523,13 @@
 				A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */,
 				A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */,
 				A9595AAD2D07EE29009C8144 /* Input.swift in Sources */,
+				A99ADE422D31D28A005A3A82 /* NewReceiptViewModel.swift in Sources */,
 				A93B6BB62C6A8D7D0038FDF5 /* User.swift in Sources */,
 				A92F4B7D2CACC362004727AD /* ViewController+Ext.swift in Sources */,
 				A91451A42C60326A008F3BD6 /* LoginBottomSheetViewModel.swift in Sources */,
 				A9408F9C2C434813006FEE4F /* String+Ext.swift in Sources */,
 				A9595AAA2D07E2C4009C8144 /* NewReceiptView.swift in Sources */,
+				A99ADE3F2D31C41E005A3A82 /* DBHelper.swift in Sources */,
 				A9408F682C43254B006FEE4F /* SceneDelegate.swift in Sources */,
 				A9595AA82D07E1BD009C8144 /* NewReceiptViewController.swift in Sources */,
 				A9595AA12D07CDEB009C8144 /* ButtonHomeView.swift in Sources */,

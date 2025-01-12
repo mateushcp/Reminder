@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupActions()
+        setupActionForNewRecipe()
         setupNavigationBar()
         checkForExistingData()
     }
@@ -54,9 +54,9 @@ class HomeViewController: UIViewController {
         setupContentViewToBounds(contentView: contentView)
     }
     
-    private func setupActions() {
+    private func setupActionForNewRecipe() {
         contentView.newPrescriptionButton.tapAction = { [weak self] in
-            self?.didTapNewPrescriptionButton()
+            self?.didTapNewPRescriptionButton()
         }
     }
     
@@ -83,7 +83,7 @@ extension HomeViewController: HomeViewDelegate {
         selectProfileImage()
     }
     
-    func didTapNewPrescriptionButton() {
+    func didTapNewPRescriptionButton() {
         flowDelegate.navigateToRecipes()
     }
 }
@@ -113,3 +113,4 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         dismiss(animated: true)
     }
 }
+

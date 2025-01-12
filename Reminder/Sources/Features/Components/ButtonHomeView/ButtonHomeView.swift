@@ -10,7 +10,7 @@ import UIKit
 
 class ButtonHomeView: UIView {
     var tapAction: (() -> Void)?
-
+    
     private let iconView: UIView = {
         let view = UIView()
         view.backgroundColor = Colors.gray600
@@ -105,12 +105,12 @@ class ButtonHomeView: UIView {
     }
     
     private func setupGesture() {
-         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-         self.addGestureRecognizer(tapGesture)
-         self.isUserInteractionEnabled = true
-     }
-     
-     @objc private func handleTap() {
-         tapAction?()
-     }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.addGestureRecognizer(tapGesture)
+        self.isUserInteractionEnabled = true
+    }
+    
+    @objc private func handleTap() {
+        tapAction?()
+    }
 }
