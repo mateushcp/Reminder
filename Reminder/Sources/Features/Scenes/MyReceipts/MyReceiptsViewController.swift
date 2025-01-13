@@ -37,6 +37,7 @@ class MyReceiptsViewController: UIViewController {
         view.backgroundColor = Colors.gray800
         self.navigationItem.hidesBackButton = true
         setupConstraints()
+        contentView.delegate = self
     }
 
     private func setupConstraints() {
@@ -92,8 +93,33 @@ extension MyReceiptsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: RemedyCell.identifier, for: indexPath) as! RemedyCell
         let medicinesVar = medicines[indexPath.section]
         cell.configure(title: medicinesVar.remedy, time: medicinesVar.time, recurrence: medicinesVar.recurrence)
+        
+        cell.onDelete = { [weak self] in
+            guard let self = self else { return }
+            
+            if let actualIndexPath = tableView.indexPath(for: cell) {
+                if actualIndexPath.section < self.medicines.count {
+                    self.viewModel.deleteReceipt(byId: self.medicines[actualIndexPath.section].id)
+                    self.medicines.remove(at: actualIndexPath.section)
+                    
+                    tableView.deleteSections(IndexSet(integer: actualIndexPath.section), with: .automatic)
+                }
+            } else {
+                print("Erro ao excluir uma sessao invalida")
+            }
+        }
+        
         return cell
     }
-    
-    
 }
+
+extension MyReceiptsViewController: MyReceiptsViewDelegate {
+    func didTapBackButton() {
+        flowDelegate?.popScreen()
+    }
+    
+    func didTapAddButton() {
+        flowDelegate?.goToNewReceipts()
+    }
+}
+

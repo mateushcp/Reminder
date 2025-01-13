@@ -7,64 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73A38F5A-4E71-4206-B13F-B9507929BF2C"
+            uuid = "E250FA50-3973-4FEF-94C1-EBA5DD8322F7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Scenes/Home/HomeView.swift"
+            filePath = "Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "nameTextFieldDidEndEditing()"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "didTapBackButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E250FA50-3973-4FEF-94C1-EBA5DD8322F7 - a7c0c34acb92d395"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reminder.MyReceiptsViewController.didTapBackButton() -&gt; ()"
+                  moduleName = "Reminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/Reminder/Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "E250FA50-3973-4FEF-94C1-EBA5DD8322F7 - a7c0c34acb92d395"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reminder.MyReceiptsViewController.didTapBackButton() -&gt; ()"
+                  moduleName = "Reminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/Reminder/Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FE28ED4-35C6-4232-B1CD-E5A9450493E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "MyReceiptsViewDelegate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9302EEB8-ABB1-41F9-8A30-FB02159E1D37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "didTapAddButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F16B5541-4E56-46D9-9DE4-CBB12BE2675C"
+            uuid = "B8ECE14E-AA0A-4AD0-A5E2-AE447EFAC10A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Database/DBHelper.swift"
+            filePath = "Reminder/Sources/Features/Scenes/MyReceipts/MyReceiptsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "openDatabase()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14A473FF-C15A-48DB-9D64-D7C1B3D3434F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Database/DBHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "createTable()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B54EDF2D-0923-4D3F-9D77-A17821979EFB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "validateInputs()"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "didTapBackButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
