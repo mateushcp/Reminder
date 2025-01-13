@@ -5,6 +5,7 @@
 //  Created by Mateus Henrique Coelho de Paulo on 12/01/25.
 //
 
+import Foundation
 import UIKit
 
 class RemedyCell: UITableViewCell {
@@ -12,7 +13,7 @@ class RemedyCell: UITableViewCell {
     static let identifier = "RemedyCell"
     
     private let titleLabel: UILabel = {
-        let label = UILabel()
+       let label = UILabel()
         label.font = Typography.subHeading
         label.textColor = Colors.gray200
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -63,11 +64,10 @@ class RemedyCell: UITableViewCell {
         return imageView
     }()
     
-    private let trashIcon: UIButton = {
+    private let trashButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "trash")
         button.setImage(image, for: .normal)
-        button.tintColor = Colors.primaryRedBase
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -82,70 +82,60 @@ class RemedyCell: UITableViewCell {
     }
     
     private func setupView() {
-        contentView.backgroundColor = Colors.gray700 // Fundo da célula
+        contentView.backgroundColor = Colors.gray700
+        contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 12
-
+        
         contentView.addSubview(titleLabel)
         contentView.addSubview(timeBackgroundView)
         contentView.addSubview(recurrenceBackgroundView)
-        contentView.addSubview(trashIcon)
+        contentView.addSubview(trashButton)
         
         timeBackgroundView.addSubview(watchIcon)
         timeBackgroundView.addSubview(timeLabel)
         
         recurrenceBackgroundView.addSubview(recurrenceIcon)
         recurrenceBackgroundView.addSubview(recurrenceLabel)
-
-        setupConstraints()
         
-        contentView.layer.masksToBounds = true
+        setupConstraints()
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            // Title
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Metrics.medier),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.medium),
             
-            // Time Background View
             timeBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Metrics.small),
-            timeBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Metrics.medium),
+            timeBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant:  Metrics.medium),
             timeBackgroundView.heightAnchor.constraint(equalToConstant: 28),
             
-            // Watch Icon inside Time Background View
             watchIcon.leadingAnchor.constraint(equalTo: timeBackgroundView.leadingAnchor, constant: Metrics.small),
             watchIcon.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
             watchIcon.heightAnchor.constraint(equalToConstant: 16),
             watchIcon.widthAnchor.constraint(equalToConstant: 16),
             
-            // Time Label inside Time Background View
             timeLabel.leadingAnchor.constraint(equalTo: watchIcon.trailingAnchor, constant: Metrics.tiny),
             timeLabel.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
             timeLabel.trailingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: -Metrics.small),
             
-            // Recurrence Background View
             recurrenceBackgroundView.centerYAnchor.constraint(equalTo: timeBackgroundView.centerYAnchor),
             recurrenceBackgroundView.leadingAnchor.constraint(equalTo: timeBackgroundView.trailingAnchor, constant: Metrics.tiny),
             recurrenceBackgroundView.heightAnchor.constraint(equalToConstant: 28),
             
-            // Recurrence Icon inside Recurrence Background View
             recurrenceIcon.leadingAnchor.constraint(equalTo: recurrenceBackgroundView.leadingAnchor, constant: Metrics.small),
             recurrenceIcon.centerYAnchor.constraint(equalTo: recurrenceBackgroundView.centerYAnchor),
             recurrenceIcon.heightAnchor.constraint(equalToConstant: 16),
             recurrenceIcon.widthAnchor.constraint(equalToConstant: 16),
             
-            // Recurrence Label inside Recurrence Background View
             recurrenceLabel.leadingAnchor.constraint(equalTo: recurrenceIcon.trailingAnchor, constant: Metrics.tiny),
             recurrenceLabel.centerYAnchor.constraint(equalTo: recurrenceBackgroundView.centerYAnchor),
             recurrenceLabel.trailingAnchor.constraint(equalTo: recurrenceBackgroundView.trailingAnchor, constant: -Metrics.small),
             
-            // Trash Icon
-            trashIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.medium),
-            trashIcon.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            trashIcon.heightAnchor.constraint(equalToConstant: 16),
-            trashIcon.widthAnchor.constraint(equalToConstant: 16),
+            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.medium),
+            trashButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            trashButton.heightAnchor.constraint(equalToConstant: 16),
+            trashButton.widthAnchor.constraint(equalToConstant: 16),
             
-            // Content View Bottom
             contentView.bottomAnchor.constraint(equalTo: timeBackgroundView.bottomAnchor, constant: Metrics.medium)
         ])
     }
