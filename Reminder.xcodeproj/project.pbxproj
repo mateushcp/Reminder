@@ -46,6 +46,8 @@
 		A99ADE4B2D342695005A3A82 /* MyReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */; };
 		A99ADE4F2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */; };
 		A99ADE542D349724005A3A82 /* RemedyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE532D349724005A3A82 /* RemedyCell.swift */; };
+		A99ADE572D35561E005A3A82 /* MyReceiptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE562D35561E005A3A82 /* MyReceiptsViewModel.swift */; };
+		A99ADE592D355810005A3A82 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE582D355810005A3A82 /* Medicine.swift */; };
 		DC2E8EDCCCCB44809AA164FE /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE7918EC1D61E6A2C06463A /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
 		A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsFlowDelegate.swift; sourceTree = "<group>"; };
 		A99ADE532D349724005A3A82 /* RemedyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyCell.swift; sourceTree = "<group>"; };
+		A99ADE562D35561E005A3A82 /* MyReceiptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewModel.swift; sourceTree = "<group>"; };
+		A99ADE582D355810005A3A82 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				A93B6BB52C6A8D7D0038FDF5 /* User.swift */,
+				A99ADE582D355810005A3A82 /* Medicine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 		A99ADE472D3424E6005A3A82 /* MyReceipts */ = {
 			isa = PBXGroup;
 			children = (
+				A99ADE552D35560A005A3A82 /* ViewModel */,
 				A99ADE522D349714005A3A82 /* UiTableViewCell */,
 				A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */,
 				A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */,
@@ -405,6 +411,14 @@
 				A99ADE532D349724005A3A82 /* RemedyCell.swift */,
 			);
 			path = UiTableViewCell;
+			sourceTree = "<group>";
+		};
+		A99ADE552D35560A005A3A82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A99ADE562D35561E005A3A82 /* MyReceiptsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A9F94AC82C99DC660009BC47 /* ViewModel */ = {
@@ -551,10 +565,12 @@
 				A99ADE4F2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift in Sources */,
 				A9408F8A2C43315B006FEE4F /* Metrics-Constants.swift in Sources */,
 				A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */,
+				A99ADE572D35561E005A3A82 /* MyReceiptsViewModel.swift in Sources */,
 				A96D952F2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift in Sources */,
 				A96D952B2C6A6C36004F0793 /* SplashFlowDelegate.swift in Sources */,
 				A9595AAD2D07EE29009C8144 /* Input.swift in Sources */,
 				A99ADE492D3424F3005A3A82 /* MyReceiptsView.swift in Sources */,
+				A99ADE592D355810005A3A82 /* Medicine.swift in Sources */,
 				A99ADE422D31D28A005A3A82 /* NewReceiptViewModel.swift in Sources */,
 				A93B6BB62C6A8D7D0038FDF5 /* User.swift in Sources */,
 				A92F4B7D2CACC362004727AD /* ViewController+Ext.swift in Sources */,
