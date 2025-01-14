@@ -97,38 +97,24 @@ NS_ASSUME_NONNULL_END
 #define GTM_TARGET_SUPPORTS_APP_TRANSPORT_SECURITY 1
 #endif
 
-#if ((defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST) ||                                 \
-     (TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_15) || \
-     (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                  \
-      __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0) ||                                       \
-     (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                                \
-      __WATCH_OS_VERSION_MIN_REQUIRED >= __WATCHOS_6_0) ||                                        \
-     (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MIN_REQUIRED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#elif ((TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_15) || \
-       (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                 \
-        __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0) ||                                       \
-       (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                               \
-        __WATCH_OS_VERSION_MAX_ALLOWED >= __WATCHOS_6_0) ||                                        \
-       (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MAX_ALLOWED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
-#else
-#define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
-#define GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
+#if TARGET_OS_IOS
+# if defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0
+#  define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
+# else
+#  define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 0
+# endif
+#else  // Not iOS
+# define GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION 1
 #endif
 
-#if ((defined(TARGET_OS_MACCATALYST) && TARGET_OS_MACCATALYST) ||                                 \
-     (TARGET_OS_OSX && defined(__MAC_10_15) && __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_15) || \
-     (TARGET_OS_IOS && defined(__IPHONE_13_0) &&                                                  \
-      __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0) ||                                       \
-     (TARGET_OS_WATCH && defined(__WATCHOS_6_0) &&                                                \
-      __WATCH_OS_VERSION_MIN_REQUIRED >= __WATCHOS_6_0) ||                                        \
-     (TARGET_OS_TV && defined(__TVOS_13_0) && __TVOS_VERSION_MIN_REQUIRED >= __TVOS_13_0))
-#define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
-#else
-#define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 0
+#if TARGET_OS_IOS
+# if defined(__IPHONE_13_0) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_13_0
+#  define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
+# else
+#  define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 0
+# endif
+#else  // Not iOS
+# define GTM_SDK_REQUIRES_SECTRUSTEVALUATEWITHERROR 1
 #endif
 
 #if __has_attribute(swift_async)
@@ -713,6 +699,25 @@ static GTMSessionFetcherTestBlock _Nullable gGlobalTestBlock;
     }
   }
 
+  if ([fetchRequest valueForHTTPHeaderField:@"User-Agent"] == nil) {
+    id<GTMUserAgentProvider> userAgentProvider = _userAgentProvider;
+    NSString *cachedUserAgent = userAgentProvider.cachedUserAgent;
+    if (cachedUserAgent) {
+      // The User-Agent is already cached in memory, so set it synchronously.
+      [fetchRequest setValue:cachedUserAgent forHTTPHeaderField:@"User-Agent"];
+    } else if (userAgentProvider != nil) {
+      // The User-Agent is not cached in memory. Fetch it asynchronously.
+      [self updateUserAgentAsynchronouslyForRequest:fetchRequest
+                                  userAgentProvider:userAgentProvider
+                                           mayDelay:mayDelay
+                                       mayAuthorize:mayAuthorize
+                                        mayDecorate:mayDecorate];
+      // This method can't continue until the User-Agent header is fetched. The above
+      // method call will re-enter this method later, but with the User-Agent header set.
+      return;
+    }
+  }
+
   NSString *effectiveHTTPMethod = [fetchRequest valueForHTTPHeaderField:@"X-HTTP-Method-Override"];
   if (effectiveHTTPMethod == nil) {
     effectiveHTTPMethod = fetchRequest.HTTPMethod;
@@ -963,14 +968,12 @@ static GTMSessionFetcherTestBlock _Nullable gGlobalTestBlock;
 #if !GTM_ALLOW_INSECURE_REQUESTS
 #if GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
     _configuration.TLSMinimumSupportedProtocolVersion = tls_protocol_version_TLSv12;
-#elif GTM_SDK_SUPPORTS_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
-    if (@available(iOS 13, tvOS 13, macOS 10.15, *)) {
+#else
+    if (@available(iOS 13, *)) {
       _configuration.TLSMinimumSupportedProtocolVersion = tls_protocol_version_TLSv12;
     } else {
       _configuration.TLSMinimumSupportedProtocol = kTLSProtocol12;
     }
-#else
-    _configuration.TLSMinimumSupportedProtocol = kTLSProtocol12;
 #endif  // GTM_SDK_REQUIRES_TLSMINIMUMSUPPORTEDPROTOCOLVERSION
 #endif
   }  // !_configuration
@@ -1002,6 +1005,49 @@ static GTMSessionFetcherTestBlock _Nullable gGlobalTestBlock;
   }
 
   return session;
+}
+
+// Asynchronously calculates the User-Agent header from |userAgentProvider|, then
+// sets it in |fetchRequest| and continues the request.
+- (void)updateUserAgentAsynchronouslyForRequest:(NSMutableURLRequest *)fetchRequest
+                              userAgentProvider:(id<GTMUserAgentProvider>)userAgentProvider
+                                       mayDelay:(BOOL)mayDelay
+                                   mayAuthorize:(BOOL)mayAuthorize
+                                    mayDecorate:(BOOL)mayDecorate {
+  GTMSESSION_LOG_DEBUG_VERBOSE(
+      @"GTMSessionFetcher fetching User-Agent from GTMUserAgentProvider %@...", _userAgentProvider);
+  __weak __typeof__(self) weakSelf = self;
+  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    __strong __typeof__(self) strongSelf = weakSelf;
+    if (!strongSelf) {
+      GTMSESSION_LOG_DEBUG_VERBOSE(@"GTMSessionFetcher deallocated before GTMUserAgentProvider "
+                                   @"fetch dispatched, ignoring.");
+      return;
+    }
+    NSString *userAgent = [userAgentProvider userAgent];
+    GTMSESSION_LOG_DEBUG_VERBOSE(@"Fetched User-Agent string: [%@]", userAgent);
+    GTMSESSION_ASSERT_DEBUG(userAgentProvider.cachedUserAgent != nil,
+                            @"GTMUserAgentProvider %@ should have cached user agent now that it's "
+                            @"calculated, but returned nil",
+                            userAgentProvider);
+    BOOL shouldStop;
+    @synchronized(strongSelf) {
+      GTMSessionMonitorSynchronized(strongSelf);
+      [strongSelf->_request setValue:userAgent forHTTPHeaderField:@"User-Agent"];
+      shouldStop = strongSelf->_userStoppedFetching;
+    }
+    if (shouldStop) {
+      NSError *error = [NSError errorWithDomain:kGTMSessionFetcherErrorDomain
+                                           code:GTMSessionFetcherErrorUserCancelled
+                                       userInfo:nil];
+      [strongSelf invokeFetchCallbacksOnCallbackQueueWithData:nil
+                                                        error:error
+                                                  mayDecorate:NO
+                                       shouldReleaseCallbacks:YES];
+    } else {
+      [strongSelf beginFetchMayDelay:mayDelay mayAuthorize:mayAuthorize mayDecorate:mayDecorate];
+    }
+  });
 }
 
 NSData *_Nullable GTMDataFromInputStream(NSInputStream *inputStream, NSError **outError) {
@@ -2484,6 +2530,14 @@ static _Nullable id<GTMUIApplicationProtocol> gSubstituteUIApp;
 
   NSString *originalScheme = originalRequestURL.scheme;
   NSString *redirectScheme = redirectRequestURL.scheme;
+
+  // If no change in scheme with redirect, just return the redirect.
+  if (originalScheme != nil &&
+      redirectScheme != nil &&
+      [originalScheme caseInsensitiveCompare:redirectScheme] == NSOrderedSame) {
+    return redirectRequestURL;
+  }
+
   BOOL insecureToSecureRedirect =
       (originalScheme != nil && [originalScheme caseInsensitiveCompare:@"http"] == NSOrderedSame &&
        redirectScheme != nil && [redirectScheme caseInsensitiveCompare:@"https"] == NSOrderedSame);
@@ -2822,13 +2876,15 @@ static _Nullable id<GTMUIApplicationProtocol> gSubstituteUIApp;
       if (_receivedProgressBlock) {
         [self invokeOnCallbackQueueUnlessStopped:^{
           GTMSessionFetcherReceivedProgressBlock progressBlock;
+          int64_t downloadedLength;
           @synchronized(self) {
             GTMSessionMonitorSynchronized(self);
 
             progressBlock = self->_receivedProgressBlock;
+            downloadedLength = self->_downloadedLength;
           }
           if (progressBlock) {
-            progressBlock((int64_t)bufferLength, self->_downloadedLength);
+            progressBlock((int64_t)bufferLength, downloadedLength);
           }
         }];
       }
@@ -3691,6 +3747,7 @@ static NSMutableDictionary *gSystemCompletionHandlers = nil;
             testBlockAccumulateDataChunkCount = _testBlockAccumulateDataChunkCount,
             comment = _comment,
             log = _log,
+            userAgentProvider = _userAgentProvider,
             stopFetchingTriggersCompletionHandler = _stopFetchingTriggersCompletionHandler;
 
 #if !STRIP_GTM_FETCH_LOGGING
@@ -4574,7 +4631,8 @@ NSString *GTMFetcherCleanedUserAgentString(NSString *str) {
 
   // Delete http token separators and remaining whitespace
   static NSCharacterSet *charsToDelete = nil;
-  if (charsToDelete == nil) {
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
     // Make a set of unwanted characters
     NSString *const kSeparators = @"()<>@;:\\\"/[]?={}";
 
@@ -4582,7 +4640,7 @@ NSString *GTMFetcherCleanedUserAgentString(NSString *str) {
         [[NSCharacterSet whitespaceAndNewlineCharacterSet] mutableCopy];
     [mutableChars addCharactersInString:kSeparators];
     charsToDelete = [mutableChars copy];  // hang on to an immutable copy
-  }
+  });
 
   while (1) {
     NSRange separatorRange = [result rangeOfCharacterFromSet:charsToDelete];
@@ -4675,6 +4733,65 @@ NSString *GTMFetcherSystemVersionString(void) {
   });
   return sSavedSystemString;
 }
+
+@implementation GTMUserAgentStringProvider
+
+@synthesize userAgent = _userAgent;
+
+- (instancetype)initWithUserAgentString:(NSString *)userAgentString {
+  self = [super init];
+  if (self) {
+    _userAgent = [userAgentString copy];
+  }
+  return self;
+}
+
+#pragma mark - GTMUserAgentProvider
+
+- (nullable NSString *)cachedUserAgent {
+  return _userAgent;
+}
+
+- (NSString *)userAgent {
+  return _userAgent;
+}
+
+@end
+
+@interface GTMStandardUserAgentProvider () {
+  NSBundle *_Nullable _bundle;
+}
+
+@property(atomic, copy) NSString *cachedUserAgent;
+
+@end
+
+@implementation GTMStandardUserAgentProvider
+
+@synthesize cachedUserAgent = _cachedUserAgent;
+
+- (instancetype)initWithBundle:(nullable NSBundle *)bundle {
+  self = [super init];
+  if (self) {
+    _bundle = bundle;
+  }
+  return self;
+}
+
+#pragma mark - GTMUserAgentProvider
+
+- (NSString *)userAgent {
+  NSString *userAgent = self.cachedUserAgent;
+  if (!userAgent) {
+    // This might invoke `GTMFetcherStandardUserAgentString()` more than once if two threads enter
+    // here concurrently, but the result will be the same for both.
+    userAgent = GTMFetcherStandardUserAgentString(_bundle);
+    self.cachedUserAgent = userAgent;
+  }
+  return userAgent;
+}
+
+@end
 
 NSString *GTMFetcherStandardUserAgentString(NSBundle *_Nullable bundle) {
   NSString *result = [NSString stringWithFormat:@"%@ %@", GTMFetcherApplicationIdentifier(bundle),

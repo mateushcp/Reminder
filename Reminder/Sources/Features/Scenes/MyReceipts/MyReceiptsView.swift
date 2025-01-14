@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MyReceiptsView: UIView {
-        weak public var delegate: MyReceiptsViewDelegate?
+    weak public var delegate: MyReceiptsViewDelegate?
     
     let headerBackground: UIView = {
         let view = UIView()

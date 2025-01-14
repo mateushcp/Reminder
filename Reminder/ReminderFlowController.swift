@@ -71,8 +71,6 @@ extension ReminderFlowController: HomeFlowDelegate {
     func navigateToRecipes() {
         let recipesViewController = viewControllerFactory.makeRecipesViewController()
         self.navigationController?.pushViewController(recipesViewController, animated: true)
-        self.navigationController?.navigationBar.isHidden = true
-
     }
 
 }
@@ -80,8 +78,12 @@ extension ReminderFlowController: HomeFlowDelegate {
 //MARK: - MyReceipts
 
 extension ReminderFlowController: MyReceiptsFlowDelegate {
+    func popScreen() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func goToNewReceipts() {
-        //ainda nao implementado
+        self.navigateToRecipes()
     }
     
 }

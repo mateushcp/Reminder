@@ -7,10 +7,21 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 class NewReceiptViewController: UIViewController {
     private let newReceiptView = NewReceiptView()
     private let viewModel = NewReceiptViewModel()
+    
+    private let succesAnimationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "success")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1.0
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.isHidden = true
+        return animationView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +32,9 @@ class NewReceiptViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = Colors.gray800
         view.addSubview(newReceiptView)
-        
+        view.addSubview(succesAnimationView)
+        self.navigationItem.hidesBackButton = true
+
         setupConstraints()
     }
     
@@ -32,6 +45,9 @@ class NewReceiptViewController: UIViewController {
             newReceiptView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             newReceiptView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             newReceiptView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            succesAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            succesAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -51,6 +67,8 @@ class NewReceiptViewController: UIViewController {
                              time: time,
                              recurrence: recurrence,
                              takeNow: takeNow)
+        
+        playSuccessAnimation()
         print("receita \(remedy) adicionada")
     }
     
@@ -59,4 +77,20 @@ class NewReceiptViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    private func clearFieldsAndResetButton() {
+        newReceiptView.remedyInput.textField.text = ""
+        newReceiptView.timeInput.textField.text = ""
+        newReceiptView.timeInput.textField.text = ""
+        newReceiptView.addButton.isEnabled = false
+    }
+    
+    private func playSuccessAnimation() {
+        succesAnimationView.isHidden = false
+        succesAnimationView.play { [weak self] finished in
+            if finished {
+                self?.succesAnimationView.isHidden = true
+                self?.clearFieldsAndResetButton()
+            }
+        }
+    }
 }
