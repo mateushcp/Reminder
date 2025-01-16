@@ -12,7 +12,7 @@ import Lottie
 class NewReceiptViewController: UIViewController {
     private let newReceiptView = NewReceiptView()
     private let viewModel = NewReceiptViewModel()
-    
+
     private let succesAnimationView: LottieAnimationView = {
         let animationView = LottieAnimationView(name: "success")
         animationView.contentMode = .scaleAspectFit
@@ -22,13 +22,13 @@ class NewReceiptViewController: UIViewController {
         animationView.isHidden = true
         return animationView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupActions()
     }
-    
+
     private func setupView() {
         view.backgroundColor = Colors.gray800
         view.addSubview(newReceiptView)
@@ -37,7 +37,7 @@ class NewReceiptViewController: UIViewController {
 
         setupConstraints()
     }
-    
+
     private func setupConstraints() {
         newReceiptView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -45,45 +45,45 @@ class NewReceiptViewController: UIViewController {
             newReceiptView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             newReceiptView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             newReceiptView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
+
             succesAnimationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             succesAnimationView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
-    
+
     private func setupActions() {
         newReceiptView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         newReceiptView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
-    
+
     @objc
     private func addButtonTapped() {
         let remedy = newReceiptView.remedyInput.getText()
         let time = newReceiptView.timeInput.getText()
         let recurrence = newReceiptView.recurrenceInput.getText()
         let takeNow = false
-        
+
         viewModel.addReceipt(remedy: remedy,
                              time: time,
                              recurrence: recurrence,
                              takeNow: takeNow)
-        
+
         playSuccessAnimation()
         print("receita \(remedy) adicionada")
     }
-    
-    @objc 
+
+    @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     private func clearFieldsAndResetButton() {
         newReceiptView.remedyInput.textField.text = ""
         newReceiptView.timeInput.textField.text = ""
         newReceiptView.timeInput.textField.text = ""
         newReceiptView.addButton.isEnabled = false
     }
-    
+
     private func playSuccessAnimation() {
         succesAnimationView.isHidden = false
         succesAnimationView.play { [weak self] finished in

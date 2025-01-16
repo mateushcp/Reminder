@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A879012D4B005B2760296672 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EE5074666B50619AB5069F /* Pods_Reminder.framework */; };
+		7BDA375E9C2B2E6C279D601A /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */; };
 		A91451A42C60326A008F3BD6 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91451A32C60326A008F3BD6 /* LoginBottomSheetViewModel.swift */; };
 		A91451A82C603DFB008F3BD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */; };
 		A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4B702CACBFD0004727AD /* HomeView.swift */; };
@@ -53,9 +53,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44EE5074666B50619AB5069F /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6389B162011C55E18976E7CE /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
-		9DACF6CB784D840D70E95339 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
+		2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
+		394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
+		9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91451A32C60326A008F3BD6 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A92F4B702CACBFD0004727AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A879012D4B005B2760296672 /* Pods_Reminder.framework in Frameworks */,
+				7BDA375E9C2B2E6C279D601A /* Pods_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,10 +117,18 @@
 		056127DD9A6D35FC445FC0F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9DACF6CB784D840D70E95339 /* Pods-Reminder.debug.xcconfig */,
-				6389B162011C55E18976E7CE /* Pods-Reminder.release.xcconfig */,
+				2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */,
+				394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3A802462253DC4F22BF85DAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A91451A22C603253008F3BD6 /* ViewModel */ = {
@@ -195,7 +203,7 @@
 				A9408F642C43254B006FEE4F /* Reminder */,
 				A9408F632C43254B006FEE4F /* Products */,
 				056127DD9A6D35FC445FC0F0 /* Pods */,
-				F1AB093199F6F869687C40B9 /* Frameworks */,
+				3A802462253DC4F22BF85DAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -431,14 +439,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F1AB093199F6F869687C40B9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44EE5074666B50619AB5069F /* Pods_Reminder.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,11 +446,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9408F762C43254C006FEE4F /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
-				43F28F47538900F6D3A7790A /* [CP] Check Pods Manifest.lock */,
+				F487A58E68EC0AB7319F4ACF /* [CP] Check Pods Manifest.lock */,
 				A9408F5E2C43254B006FEE4F /* Sources */,
+				A9A614422D387B250040A644 /* Swiftlint */,
 				A9408F5F2C43254B006FEE4F /* Frameworks */,
 				A9408F602C43254B006FEE4F /* Resources */,
-				546E96888381D48494B77E44 /* [CP] Embed Pods Frameworks */,
+				A89BA676F1B51AAA2A818AA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -509,7 +510,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		43F28F47538900F6D3A7790A /* [CP] Check Pods Manifest.lock */ = {
+		A89BA676F1B51AAA2A818AA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9A614422D387B250040A644 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F487A58E68EC0AB7319F4ACF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,23 +565,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		546E96888381D48494B77E44 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -715,7 +734,7 @@
 		};
 		A9408F772C43254C006FEE4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DACF6CB784D840D70E95339 /* Pods-Reminder.debug.xcconfig */;
+			baseConfigurationReference = 2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -724,16 +743,18 @@
 				DEVELOPMENT_TEAM = WNNJ4KX4AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reminder;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "\"Precisamos de sua permissao para notificar sobre seus remedios\"";
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abidu.Reminder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -743,7 +764,7 @@
 		};
 		A9408F782C43254C006FEE4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6389B162011C55E18976E7CE /* Pods-Reminder.release.xcconfig */;
+			baseConfigurationReference = 394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -752,16 +773,18 @@
 				DEVELOPMENT_TEAM = WNNJ4KX4AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reminder;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "\"Precisamos de sua permissao para notificar sobre seus remedios\"";
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Abidu.Reminder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
