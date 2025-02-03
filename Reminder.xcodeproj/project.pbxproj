@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BDA375E9C2B2E6C279D601A /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */; };
 		A91451A42C60326A008F3BD6 /* LoginBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91451A32C60326A008F3BD6 /* LoginBottomSheetViewModel.swift */; };
 		A91451A82C603DFB008F3BD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */; };
 		A92F4B712CACBFD6004727AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92F4B702CACBFD0004727AD /* HomeView.swift */; };
@@ -50,12 +49,12 @@
 		A99ADE542D349724005A3A82 /* RemedyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE532D349724005A3A82 /* RemedyCell.swift */; };
 		A99ADE572D35561E005A3A82 /* MyReceiptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE562D35561E005A3A82 /* MyReceiptsViewModel.swift */; };
 		A99ADE592D355810005A3A82 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ADE582D355810005A3A82 /* Medicine.swift */; };
+		EA9C4D56E23F38B26C3D482B /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08BBB84B92EB5FB635A4C13D /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
-		394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
-		9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08BBB84B92EB5FB635A4C13D /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F0856B477FCBC024AC7692 /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 		A91451A32C60326A008F3BD6 /* LoginBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A92F4B702CACBFD0004727AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		A99ADE532D349724005A3A82 /* RemedyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemedyCell.swift; sourceTree = "<group>"; };
 		A99ADE562D35561E005A3A82 /* MyReceiptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewModel.swift; sourceTree = "<group>"; };
 		A99ADE582D355810005A3A82 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		BC16A9691268B8E0E6CC94EA /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BDA375E9C2B2E6C279D601A /* Pods_Reminder.framework in Frameworks */,
+				EA9C4D56E23F38B26C3D482B /* Pods_Reminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,16 +117,16 @@
 		056127DD9A6D35FC445FC0F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */,
-				394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */,
+				A3F0856B477FCBC024AC7692 /* Pods-Reminder.debug.xcconfig */,
+				BC16A9691268B8E0E6CC94EA /* Pods-Reminder.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		3A802462253DC4F22BF85DAC /* Frameworks */ = {
+		223BA9425B73215F4756B182 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9A8A7F703636B8037FA5D235 /* Pods_Reminder.framework */,
+				08BBB84B92EB5FB635A4C13D /* Pods_Reminder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 				A9408F642C43254B006FEE4F /* Reminder */,
 				A9408F632C43254B006FEE4F /* Products */,
 				056127DD9A6D35FC445FC0F0 /* Pods */,
-				3A802462253DC4F22BF85DAC /* Frameworks */,
+				223BA9425B73215F4756B182 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -446,12 +446,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9408F762C43254C006FEE4F /* Build configuration list for PBXNativeTarget "Reminder" */;
 			buildPhases = (
-				F487A58E68EC0AB7319F4ACF /* [CP] Check Pods Manifest.lock */,
+				B14B4E0C7B06FB72BF5AA248 /* [CP] Check Pods Manifest.lock */,
 				A9408F5E2C43254B006FEE4F /* Sources */,
 				A9A614422D387B250040A644 /* Swiftlint */,
 				A9408F5F2C43254B006FEE4F /* Frameworks */,
 				A9408F602C43254B006FEE4F /* Resources */,
-				A89BA676F1B51AAA2A818AA1 /* [CP] Embed Pods Frameworks */,
+				9AC9AE1635E31957EC106B24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -510,7 +510,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A89BA676F1B51AAA2A818AA1 /* [CP] Embed Pods Frameworks */ = {
+		9AC9AE1635E31957EC106B24 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -545,7 +545,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		F487A58E68EC0AB7319F4ACF /* [CP] Check Pods Manifest.lock */ = {
+		B14B4E0C7B06FB72BF5AA248 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -734,7 +734,7 @@
 		};
 		A9408F772C43254C006FEE4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2488981FBDCDB41552AF3F46 /* Pods-Reminder.debug.xcconfig */;
+			baseConfigurationReference = A3F0856B477FCBC024AC7692 /* Pods-Reminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -764,7 +764,7 @@
 		};
 		A9408F782C43254C006FEE4F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 394E4C41B43485D15D1E4DA0 /* Pods-Reminder.release.xcconfig */;
+			baseConfigurationReference = BC16A9691268B8E0E6CC94EA /* Pods-Reminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,6 @@
+app_identifier("com.br.reminder") # The bundle identifier of your app
+apple_id("teus.hcp@gmail.com") # Your Apple Developer Portal username
+key_filepath "/Users/mateuscoelho/Downloads/AuthKey_R3Z873FMC5.p8"
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

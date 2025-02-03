@@ -1,4 +1,5 @@
 PODS:
+  - CoreFramework (0.0.1)
   - Firebase/Auth (11.7.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 11.7.0)
@@ -52,6 +53,7 @@ PODS:
   - SQLite.swift/standard (0.15.3)
 
 DEPENDENCIES:
+  - CoreFramework (from `https://github.com/mateushcp/CoreFramework`)
   - Firebase/Auth
   - lottie-ios
   - SQLite.swift
@@ -71,7 +73,17 @@ SPEC REPOS:
     - RecaptchaInterop
     - SQLite.swift
 
+EXTERNAL SOURCES:
+  CoreFramework:
+    :git: https://github.com/mateushcp/CoreFramework
+
+CHECKOUT OPTIONS:
+  CoreFramework:
+    :commit: b6cf4cd70475e5c294002a9ca86c469e55d98ff2
+    :git: https://github.com/mateushcp/CoreFramework
+
 SPEC CHECKSUMS:
+  CoreFramework: 6a2e7c20f9f63faa1ff0b3d9977e783c331b2119
   Firebase: a64bf6a8546e6eab54f1c715cd6151f39d2329f4
   FirebaseAppCheckInterop: 2376d3ec5cb4267facad4fe754ab4f301a5a519b
   FirebaseAuth: 77e25aa24f3e1c626c5babd3338551fc1669ee0e
@@ -85,6 +97,6 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   SQLite.swift: 8d054987f02728cc912b0eb5a9659650573a65a2
 
-PODFILE CHECKSUM: 14480fdda653b1e4243d8d665aa97f2c1e5d3ed9
+PODFILE CHECKSUM: 84a919d99572ef58d6724500aa046c24a649f847
 
 COCOAPODS: 1.16.2
