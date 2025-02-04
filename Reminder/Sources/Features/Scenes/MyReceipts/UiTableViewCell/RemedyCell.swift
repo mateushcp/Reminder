@@ -86,7 +86,7 @@ class RemedyCell: UITableViewCell {
     private func setupView() {
         contentView.backgroundColor = Colors.gray700
         contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = 12
+        contentView.layer.cornerRadius = Metrics.medier
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(timeBackgroundView)
@@ -133,7 +133,7 @@ class RemedyCell: UITableViewCell {
             recurrenceLabel.centerYAnchor.constraint(equalTo: recurrenceBackgroundView.centerYAnchor),
             recurrenceLabel.trailingAnchor.constraint(equalTo: recurrenceBackgroundView.trailingAnchor, constant: -Metrics.small),
 
-            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.medium),
+            trashButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Metrics.medier),
             trashButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             trashButton.heightAnchor.constraint(equalToConstant: 16),
             trashButton.widthAnchor.constraint(equalToConstant: 16),

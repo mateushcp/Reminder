@@ -30,6 +30,8 @@ class HomeView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.layer.borderColor = Colors.primaryBlueBase.cgColor
+        imageView.layer.borderWidth = 1.5
         imageView.isUserInteractionEnabled = true
         imageView.layer.cornerRadius = Metrics.medium
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +87,11 @@ class HomeView: UIView {
         super.init(frame: frame)
         setupView()
         setupTextField()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
     }
 
     required init?(coder: NSCoder) {

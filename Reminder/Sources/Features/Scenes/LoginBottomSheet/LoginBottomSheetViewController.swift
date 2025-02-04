@@ -61,7 +61,7 @@ class LoginBottomSheetViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
 
-        let heightConstraint = contentView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
+        let heightConstraint = contentView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.54).isActive = true
     }
 
     @objc
