@@ -84,9 +84,12 @@ class RemedyCell: UITableViewCell {
     }
 
     private func setupView() {
-        contentView.backgroundColor = Colors.gray700
-        contentView.layer.masksToBounds = true
-        contentView.layer.cornerRadius = Metrics.medier
+        self.backgroundColor = Colors.gray700
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = Metrics.medier
+        self.layer.borderColor = Colors.gray600.cgColor
+
+        self.layer.borderWidth = 1
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(timeBackgroundView)

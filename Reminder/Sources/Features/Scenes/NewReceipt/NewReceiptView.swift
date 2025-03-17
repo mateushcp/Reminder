@@ -38,22 +38,17 @@ class NewReceiptView: UIView {
 
     let addButton: UIButton = {
         let button = UIButton()
-
-        // Configuração do texto do botão
-        button.setTitle(" Adicionar", for: .normal)
+        button.setTitle("Adicionar", for: .normal)
         button.titleLabel?.font = Typography.subHeading
         button.setTitleColor(Colors.gray800, for: .normal)
-
-        // Configuração do ícone
-        let configuration = UIImage.SymbolConfiguration(weight: .bold) // Peso do ícone
-        let plusIcon = UIImage(systemName: "plus", withConfiguration: configuration)
-        button.setImage(plusIcon, for: .normal)
-        button.tintColor = .white // Cor do ícone
-        button.backgroundColor = Colors.primaryRedBase
+        button.backgroundColor = button.isEnabled ? Colors.primaryRedBase : Colors.gray500
         button.layer.cornerRadius = Metrics.medium
 
-        // Ajuste do layout para ícone + texto
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0) // Espaço entre ícone e texto
+        let configuration = UIImage.SymbolConfiguration(weight: .bold)
+        let plusIcon = UIImage(systemName: "plus", withConfiguration: configuration)
+        button.setImage(plusIcon, for: .normal)
+        button.tintColor = Colors.gray800
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
@@ -122,14 +117,14 @@ class NewReceiptView: UIView {
             backButton.heightAnchor.constraint(equalToConstant: 24),
             backButton.heightAnchor.constraint(equalToConstant: 24),
 
-            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Metrics.medium),
+            titleLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Metrics.small),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
 
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Metrics.small),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             descriptionLabel.trailingAnchor .constraint(equalTo: trailingAnchor, constant: -Metrics.high),
 
-            remedyInput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.huge),
+            remedyInput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.medium),
             remedyInput.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.high),
             remedyInput.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.high),
 

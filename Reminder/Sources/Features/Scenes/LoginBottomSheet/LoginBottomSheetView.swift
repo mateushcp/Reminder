@@ -55,6 +55,7 @@ class LoginBottomSheetView: UIView {
         text.leftViewMode = .always
         text.rightView = paddingView
         text.rightViewMode = .always
+
         return text
     }()
 
@@ -70,6 +71,7 @@ class LoginBottomSheetView: UIView {
         text.leftViewMode = .always
         text.rightView = paddingView
         text.rightViewMode = .always
+
         return text
     }()
 
@@ -133,9 +135,9 @@ class LoginBottomSheetView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: Metrics.inputSize),
 
             loginButton.topAnchor.constraint(greaterThanOrEqualTo: passwordTextField.bottomAnchor, constant: Metrics.medium),
-            loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medier),
+            loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Metrics.medium),
             loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.medium),
-            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Metrics.huge),
+            loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Metrics.medium),
             loginButton.heightAnchor.constraint(equalToConstant: Metrics.buttonSize)
 
         ])
