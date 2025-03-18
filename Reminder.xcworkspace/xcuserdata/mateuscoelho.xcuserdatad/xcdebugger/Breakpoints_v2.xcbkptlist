@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "A7733D07-0A4A-4D0E-850D-8E63F520EE9B"
+   uuid = "A154844C-529F-41B9-8ADC-CFC8942809E2"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4AC87AB9-F0E1-47AE-AF76-820B4F192CD2"
+            uuid = "7B01F9CB-3CA8-4050-9018-88CDEE043054"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/CoreFramework/CoreFramework/Sources/Onboarding/OnboardingView.swift"
+            filePath = "Reminder/Sources/Features/Scenes/Home/HomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "presentOnboarding(on:with:)"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "buttonAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A60F536D-D85D-4B43-A5CF-340B8AC67866"
+            uuid = "4E7370A4-418B-4D70-8E43-93FF705EA1DD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptView.swift"
+            filePath = "Reminder/Sources/Features/Scenes/Home/HomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "NewReceiptView"
-            landmarkType = "3">
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "buttonAction()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

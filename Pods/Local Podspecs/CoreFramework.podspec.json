@@ -1,6 +1,6 @@
 {
   "name": "CoreFramework",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "summary": "CoreFramewok foi desenvolvido para atender ao app Reminder como core de design e de componentes a serem utilziados pela equipe ReminderTeam",
   "description": "Esse projeto tem o intuito de bla bla bla bla",
   "homepage": "http://github.com/mateushcp/CoreFramework",
@@ -12,14 +12,14 @@
     "Mateus Coelho": "teus.hcp@gmail.com"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "13.0"
   },
   "swift_versions": [
     "5.0"
   ],
   "source": {
     "git": "https://github.com/mateushcp/CoreFramework.git",
-    "tag": "0.0.1"
+    "tag": "1.0.0"
   },
   "source_files": "CoreFramework/Sources/**/*.{swift,h}",
   "frameworks": "UIKit",

@@ -9,5 +9,5 @@ target 'Reminder' do
   pod 'Firebase/Auth'
   pod 'SQLite.swift'
   pod 'lottie-ios'
-  pod 'CoreFramework', '1.0.0'
+  pod 'CoreFramework', :git => 'https://github.com/mateushcp/CoreFramework'
 end
