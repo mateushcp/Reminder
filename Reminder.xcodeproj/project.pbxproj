@@ -92,7 +92,7 @@
 		A96D952E2C6A8048004F0793 /* ViewControllersFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactoryProtocol.swift; sourceTree = "<group>"; };
 		A96D95302C6A808D004F0793 /* ViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		A99ADE3E2D31C41E005A3A82 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
-		A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewReceiptViewModel.swift; path = Reminder/Sources/Features/Database/NewReceiptViewModel.swift; sourceTree = SOURCE_ROOT; };
+		A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewReceiptViewModel.swift; path = Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptViewModel.swift; sourceTree = SOURCE_ROOT; };
 		A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsView.swift; sourceTree = "<group>"; };
 		A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsViewController.swift; sourceTree = "<group>"; };
 		A99ADE4E2D34377F005A3A82 /* MyReceiptsFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReceiptsFlowDelegate.swift; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		A9408F642C43254B006FEE4F /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */,
 				A9408F972C4346E6006FEE4F /* Resources */,
+				A91451A72C603DFB008F3BD6 /* GoogleService-Info.plist */,
 				A9408F792C4325A7006FEE4F /* Sources */,
 				A9408F652C43254B006FEE4F /* AppDelegate.swift */,
 				A9408F672C43254B006FEE4F /* SceneDelegate.swift */,
@@ -348,7 +348,7 @@
 		A9595AA62D07E1AA009C8144 /* NewReceipt */ = {
 			isa = PBXGroup;
 			children = (
-				A99ADE402D31D279005A3A82 /* ViewModel */,
+				A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */,
 				A9595AA72D07E1BD009C8144 /* NewReceiptViewController.swift */,
 				A9595AA92D07E2C4009C8144 /* NewReceiptView.swift */,
 			);
@@ -399,15 +399,16 @@
 		A99ADE402D31D279005A3A82 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				A99ADE412D31D28A005A3A82 /* NewReceiptViewModel.swift */,
 			);
-			path = ViewModel;
+			name = ViewModel;
+			path = ../NewReceipt/ViewModel;
 			sourceTree = "<group>";
 		};
 		A99ADE472D3424E6005A3A82 /* MyReceipts */ = {
 			isa = PBXGroup;
 			children = (
 				A99ADE552D35560A005A3A82 /* ViewModel */,
+				A99ADE402D31D279005A3A82 /* ViewModel */,
 				A99ADE522D349714005A3A82 /* UiTableViewCell */,
 				A99ADE482D3424F3005A3A82 /* MyReceiptsView.swift */,
 				A99ADE4A2D342695005A3A82 /* MyReceiptsViewController.swift */,

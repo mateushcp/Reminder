@@ -19,7 +19,7 @@ public class CustomButton: UIButton {
     
     private var customWidth: CGFloat?
     
-    init(title: String, backgroundColor: UIColor = Colors.primaryRedBase) {
+    public init(title: String, backgroundColor: UIColor = Colors.primaryRedBase) {
         super.init(frame: .zero)
         setupButton(title: title,
                     icon: nil,
@@ -35,7 +35,7 @@ public class CustomButton: UIButton {
                     backgroundColor: backgroundColor)
     }
     
-    public init(title: String, 
+    public init(title: String,
          width: CGFloat,
          backgroundColors: UIColor = Colors.primaryRedBase) {
         super.init(frame: .zero)

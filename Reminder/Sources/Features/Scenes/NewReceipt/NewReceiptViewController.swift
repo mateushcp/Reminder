@@ -28,8 +28,7 @@ class NewReceiptViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         setupActions()
-        presentOnboardingIfNeeded()
-
+        presentOnboarding()
     }
 
     private func setupView() {
@@ -64,7 +63,7 @@ class NewReceiptViewController: UIViewController {
         let remedy = newReceiptView.remedyInput.getText()
         let time = newReceiptView.timeInput.getText()
         let recurrence = newReceiptView.recurrenceInput.getText()
-        let takeNow = false
+        let takeNow = newReceiptView.takeNowCheckbox.checkbox.getIsCheckedState()
 
         viewModel.addReceipt(remedy: remedy,
                              time: time,
@@ -97,18 +96,17 @@ class NewReceiptViewController: UIViewController {
         }
     }
 
-    private func presentOnboardingIfNeeded() {
+    private func presentOnboarding() {
         if !UserDefaultsManager.hasSeenOnboarding() {
             let onboardingView = OnboardingView()
             let steps = [
                 (UIImage(named: "image1"), "Bem vindo ao Onboarding do Reminder"),
-                (UIImage(named: "image2"), "Para cadastrar seus remedios é super simples"),
+                (UIImage(named: "image2"), "É Facil cadaastrar seus remédios, tao simples quanto um click"),
                 (UIImage(named: "image3"), "Selecione o horário da primeira dose, e as subsequentes"),
-                (UIImage(named: "image4"), "Iremos te lembrar de tomar no horário correto.")
+                (UIImage(named: "image4"), "Iremos te lembrar na hora de tomar o medicamento")
             ]
             onboardingView.presentOnboarding(on: view, with: steps)
             UserDefaultsManager.markOnboardingSeen()
         }
     }
-
 }

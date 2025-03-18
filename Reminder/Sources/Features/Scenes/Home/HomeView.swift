@@ -75,15 +75,14 @@ class HomeView: UIView {
     }()
 
     let feedbackButton: CustomButton = {
-           // Usando um ícone do SF Symbols; se preferir uma imagem customizada, substitua UIImage(systemName: "star.fill")
-           let starImage = UIImage(systemName: "star.fill")!
-           let button = CustomButton(title: "home.feedback.button.title".localized,
-                                     icon: starImage,
-                                     iconPosition: .horizontal,
-                                     backgroundColor: Colors.gray100)
-           button.translatesAutoresizingMaskIntoConstraints = false
-           return button
-       }()
+        let starImage = UIImage(named: "star") ?? UIImage()
+        let button = CustomButton(title: "home.feedback.button.title".localized,
+                                  icon: starImage,
+                                  iconPosition: .horizontal,
+                                  backgroundColor: Colors.gray100)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

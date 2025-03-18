@@ -12,7 +12,7 @@ class UserDefaultsManager {
     private static let userKey = "userKey"
     private static let userNameKey = "userName"
     private static let profileImageKey = "profileImageKey"
-    private static let onboardingSeenKey = "onboardingSeen" // nova chave
+    private static let onboardingSeenKey = "onboardingSeen"
 
     static func saveUser(user: User) {
         let encoder = JSONEncoder()

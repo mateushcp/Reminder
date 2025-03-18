@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreFramework
 
 class Checkbox: UIView {
     private let titleLabel: UILabel = {
@@ -17,10 +18,8 @@ class Checkbox: UIView {
         return label
     }()
 
-    private let checkbox: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "square"), for: .normal)
-        button.tintColor = Colors.gray400
+    let checkbox: ToggleCheckbox = {
+        let button = ToggleCheckbox()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -32,6 +31,7 @@ class Checkbox: UIView {
 
         titleLabel.text = title
         setupView()
+        setupAccessibility()
     }
 
     required init?(coder: NSCoder) {
@@ -57,5 +57,28 @@ class Checkbox: UIView {
             titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
 
+    }
+    
+    private func setupAccessibility() {
+        isAccessibilityElement = true
+        accessibilityLabel = "Checkbox para tomar o remedio na hora atual"
+        accessibilityHint = "Toque neste componente, que é um quadrado para alternar se voce tomou o remedio agora, ou nao"
+        accessibilityTraits = [.button]
+        
+        checkbox.addTarget(self, action: #selector(checkboxToggled), for: .touchUpInside)
+        
+    }
+    
+    @objc
+    private func checkboxToggled() {
+        let isChecked = checkbox.getIsCheckedState()
+        if isChecked {
+            accessibilityTraits = [.button, .selected]
+            UIAccessibility.post(notification: .announcement, argument: "Checkbox marcado")
+        } else {
+            accessibilityTraits = [.button]
+            UIAccessibility.post(notification: .announcement, argument: "Checkbox desmarcado")
+        }
+        
     }
 }

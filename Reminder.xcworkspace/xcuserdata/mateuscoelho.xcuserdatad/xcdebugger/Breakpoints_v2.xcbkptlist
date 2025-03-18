@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7B01F9CB-3CA8-4050-9018-88CDEE043054"
+            uuid = "CE2F27E4-DE26-4C07-9482-CC0F9CE05E5E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Scenes/Home/HomeView.swift"
+            filePath = "Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "buttonAction()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "addReceipt(remedy:time:recurrence:takeNow:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE2F27E4-DE26-4C07-9482-CC0F9CE05E5E - 69d4432f3c925911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reminder.NewReceiptViewModel.addReceipt(remedy: Swift.String, time: Swift.String, recurrence: Swift.String, takeNow: Swift.Bool) -&gt; ()"
+                  moduleName = "Reminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/Reminder/Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  uuid = "CE2F27E4-DE26-4C07-9482-CC0F9CE05E5E - 69d4432f3c925911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Reminder.NewReceiptViewModel.addReceipt(remedy: Swift.String, time: Swift.String, recurrence: Swift.String, takeNow: Swift.Bool) -&gt; ()"
+                  moduleName = "Reminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mateuscoelho/Desktop/Reminder/Reminder/Sources/Features/Scenes/NewReceipt/NewReceiptViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "860">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4E7370A4-418B-4D70-8E43-93FF705EA1DD"
+            uuid = "541542C8-CA1D-4971-8757-678639D8338F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Reminder/Sources/Features/Scenes/Home/HomeView.swift"
+            filePath = "Reminder/Sources/Features/Scenes/Splash/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "buttonAction()"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "authenticateWithFaceID()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
